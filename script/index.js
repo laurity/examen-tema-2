@@ -60,13 +60,22 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Inserte cantidad válida por favor.");
     } else {
       let account = prompt(`Inserta cuenta de destino`);
+      if (expression(account)) {
+        alert(`Se transferó ${monto.toFixed(2)} en la cuenta ${account}`);
+    }
+    else{
+        alert(`Inserte una cuenta válida`)
+       
     }
   };
+};
   /**
    * @function expression
    * Expresion regular de la cuenta
    */
-  const expression = (iban) => {};
+  const expression = (iban) => {
+        return /[a-zA-Z]{2}[0-9]{20}$/g.test(iban);
+  };
   /**
    * @function changePasswordScreen
    * Cambiar el PIN del iniciado de sesión
@@ -120,4 +129,5 @@ document.addEventListener("DOMContentLoaded", () => {
   sendMoney.addEventListener("click", sendMoneyScreen);
   changePassword.addEventListener("click", changePasswordScreen);
   exit.addEventListener("click", exitScreen);
+
 });

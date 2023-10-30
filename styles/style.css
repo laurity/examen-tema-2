@@ -16,6 +16,7 @@ h1{
     flex-direction: column;
     text-align: center;
     align-items: center;
+    box-sizing: border-box;
     border-radius: 15px;
     background: rgb(157, 157, 255);
     width: 50%;
@@ -39,4 +40,7 @@ button:hover{
     font-weight: bold;
     font-size: x-large;
     padding: 15px;
+}
+.exit{
+    background-color: rgb(255, 71, 71);
 }
