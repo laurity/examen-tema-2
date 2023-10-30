@@ -1,0 +1,17 @@
+body{
+    background-color: red;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+}
+.block{
+margin: 250px auto;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: white;
+border: 5px black solid;
+border-radius: 15px;
+padding: 15px;
+width: 50%;
+}

@@ -51,7 +51,7 @@
         }
     }
     const expression = (iban) =>{
-        ff
+        
     }
     const changePasswordScreen = () =>{
        let pin = parseInt(prompt('Cambie su PIN'));
@@ -70,12 +70,10 @@
     const loginScreen = () => {
 
         let pin = parseInt(prompt('Inserte PIN'));
-        alert(pin);
             while (pin !== PIN_CORRECTO && tryLogin > 1) {  
                 alert('Pin incorrecto');
                 tryLogin--;
-                alert(tryLogin)
-                alert("aaaaaaaa");
+                alert(`Te quedan ${tryLogin}`);
                 pin = parseInt(prompt('Inserte PIN'));
         };
 
