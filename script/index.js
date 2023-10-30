@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    //Llamamos a los ids
   const addMoney = document.getElementById("add-money-btn");
   const drawMoney = document.getElementById("draw-money-btn");
   const sendMoney = document.getElementById("send-money-btn");
@@ -6,15 +7,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const exit = document.getElementById("exit");
   const moneyShow = document.getElementById("money");
 
+  //Declaramos variables
   let money = 1000;
   let PIN_CORRECTO = 1234;
   let tryLogin = 3;
 
+  /**
+   * @function showMoneyScreen
+   * Mostrar el dinero en el banco total.
+   */
   const showMoneyScreen = () => {
     moneyShow.innerHTML = `El saldo actual es de: ${money.toFixed(2) + "€"}`;
     console.log(moneyShow);
   };
-
+  /**
+   * @function addMoneyScreen
+   * Añadimos dinero en el banco.
+   */
   const addMoneyScreen = () => {
     let addMoneyMore = parseFloat(prompt("Inserte el importe."));
     if (addMoneyMore < 0 || isNaN(addMoneyMore)) {
@@ -27,7 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
       showMoneyScreen();
     }
   };
-
+  /**
+   * @function drawMoneyScreen
+   * Retiramos dinero de la cuenta
+   */
   const drawMoneyScreen = () => {
     let drawMoneyMore = parseFloat(prompt("Inserte el importe."));
     if (drawMoneyMore < 0 || isNaN(drawMoneyMore) || drawMoneyMore > money) {
@@ -38,7 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
       showMoneyScreen();
     }
   };
-
+  /**
+   * @function sendMoneyScreen 
+   * Tranferimos dinero a una cuenta bancaria
+   */
   const sendMoneyScreen = () => {
     let monto = prompt("Inserta cantidad a transferir");
     if (monto < 0 || isNaN(monto) || monto > money) {
@@ -47,7 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
       let account = prompt(`Inserta cuenta de destino`);
     }
   };
+  /**
+   * @function expression
+   * Expresion regular de la cuenta
+   */
   const expression = (iban) => {};
+  /**
+   * @function changePasswordScreen
+   * Cambiar el PIN del iniciado de sesión
+   */
   const changePasswordScreen = () => {
     let pin = parseInt(prompt("Cambie su PIN"));
     if (pin === PIN_CORRECTO || isNaN(pin)) {
@@ -58,9 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(PIN_CORRECTO);
     }
   };
+  /**
+   * @function exitScreen
+   * Salir del cajero
+   */
   const exitScreen = () => {
     window.location.replace("templates/exit.html");
   };
+  /**
+   * @function loginScreen
+   * Iniciar sesion en el cajero
+   */
   const loginScreen = () => {
     let pin = parseInt(prompt("Inserte PIN"));
     while (pin !== PIN_CORRECTO && tryLogin > 1) {
@@ -80,8 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  //Llamada a la funcion para que al iniciar la página, tengamos que poner el pin
   loginScreen();
 
+    //Eventos que llaman a los botones
   addMoney.addEventListener("click", addMoneyScreen);
   drawMoney.addEventListener("click", drawMoneyScreen);
   sendMoney.addEventListener("click", sendMoneyScreen);
