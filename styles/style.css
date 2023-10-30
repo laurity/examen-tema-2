@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'MPlus';
+    src: url("/assets/fonts/MPLUS1p-Regular.ttf") format("truetype");
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgb(33, 33, 255), rgb(1, 1, 16), yellow, pink);
+}
+h1{
+    font-family: 'MPlus' !important;
+    text-align: center;
+    font-size: 35px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    background: rgb(157, 157, 255);
+    width: 50%;
+    margin: 100px auto;
+}
+button{
+    width: 50%;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgb(98, 98, 255);
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+}
+button:hover{
+    transition: all 0.5s ease;
+    color: white;
+    background-color: blue;
+}
+.money{
+    font-weight: bold;
+    font-size: x-large;
+    padding: 15px;
+}
