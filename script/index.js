@@ -56,26 +56,28 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   const sendMoneyScreen = () => {
     let monto = prompt("Inserta cantidad a transferir");
+    let expression = /^(ES\d{22})$/;
+    
     if (monto < 0 || isNaN(monto) || monto > money) {
       alert("Inserte cantidad válida por favor.");
     } else {
       let account = prompt(`Inserta cuenta de destino`);
-      if (expression(account)) {
-        alert(`Se transferó ${monto.toFixed(2)} en la cuenta ${account}`);
+      if (expression.test(account)) {
+        money-=monto;
+        alert(`Se ha hecho una transferencia de ${monto.toFixed(2)} en la cuenta ${account}`);
+        showMoneyScreen();
+      }
+        else{
+            alert(`Inserte una cuenta válida`)  
+      }
     }
-    else{
-        alert(`Inserte una cuenta válida`)
-       
-    }
-  };
+   
 };
   /**
    * @function expression
    * Expresion regular de la cuenta
    */
-  const expression = (iban) => {
-        return /[a-zA-Z]{2}[0-9]{20}$/g.test(iban);
-  };
+
   /**
    * @function changePasswordScreen
    * Cambiar el PIN del iniciado de sesión

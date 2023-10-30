@@ -4,7 +4,8 @@
 }
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgb(33, 33, 255), rgb(1, 1, 16), yellow, pink);
+    background: rgb(58,174,218);
+background: linear-gradient(90deg, rgba(58,174,218,1) 0%, rgba(9,73,121,1) 50%, rgba(0,212,255,1) 100%);
 }
 h1{
     font-family: 'MPlus' !important;
@@ -17,6 +18,7 @@ h1{
     text-align: center;
     align-items: center;
     box-sizing: border-box;
+    box-shadow: 0px 0px 5px 1px black;
     border-radius: 15px;
     background: rgb(157, 157, 255);
     width: 50%;
